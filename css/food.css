@@ -1,0 +1,647 @@
+/* 全局样式 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 滚动动画 */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-left {
+    opacity: 0;
+    transform: translateX(-30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-right {
+    opacity: 0;
+    transform: translateX(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* 延迟动画 */
+.delay-100 {
+    transition-delay: 0.1s;
+}
+
+.delay-200 {
+    transition-delay: 0.2s;
+}
+
+.delay-300 {
+    transition-delay: 0.3s;
+}
+
+.delay-400 {
+    transition-delay: 0.4s;
+}
+
+.delay-500 {
+    transition-delay: 0.5s;
+}
+
+body {
+    font-family: 'Microsoft YaHei', 'SimHei', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: linear-gradient(135deg, rgba(227, 122, 30, 0.9), rgba(214, 106, 15, 0.8), rgba(242, 163, 77, 0.7));
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+/* 导航栏样式 */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(44, 22, 8, 0.95);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+}
+
+/* 导航栏滚动时效果 */
+.navbar.scrolled {
+    background: rgba(44, 22, 8, 0.98);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    padding: 10px 0;
+}
+
+.navbar.scrolled .logo h1 {
+    font-size: 1.3rem;
+}
+
+.navbar.scrolled .nav-menu a {
+    font-size: 0.95rem;
+    padding: 6px 12px;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* 3D正方体容器 */
+.cube-container {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    perspective: 1000px;
+}
+
+/* 正方体 */
+.cube {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    animation: rotateCube 10s linear infinite;
+}
+
+.cube:hover {
+    animation-play-state: paused;
+}
+
+/* 链接面3D变换 */
+.cube-face-link {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+}
+
+.cube-face-link:nth-child(1) { transform: rotateY(0deg) translateZ(20px); }
+.cube-face-link:nth-child(2) { transform: rotateY(180deg) translateZ(20px); }
+.cube-face-link:nth-child(3) { transform: rotateY(-90deg) translateZ(20px); }
+.cube-face-link:nth-child(4) { transform: rotateY(90deg) translateZ(20px); }
+.cube-face-link:nth-child(5) { transform: rotateX(90deg) translateZ(20px); }
+.cube-face-link:nth-child(6) { transform: rotateX(-90deg) translateZ(20px); }
+
+/* 正方体面样式（美食页面暖橙色主题） */
+.cube-face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    background: rgba(227, 122, 30, 0.8); /* 美食页面主题色 */
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+.cube-face img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* 自动旋转动画 */
+@keyframes rotateCube {
+    0% { transform: rotateX(0deg) rotateY(0deg); }
+    100% { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+.logo h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    font-family: 'Noto Serif SC', serif;
+    transition: all 0.5s ease;
+}
+
+/* 导航栏滚动时的正方体样式 */
+.navbar.scrolled .cube-container {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar.scrolled .cube-face-link:nth-child(1) { transform: rotateY(0deg) translateZ(15px); }
+.navbar.scrolled .cube-face-link:nth-child(2) { transform: rotateY(180deg) translateZ(15px); }
+.navbar.scrolled .cube-face-link:nth-child(3) { transform: rotateY(-90deg) translateZ(15px); }
+.navbar.scrolled .cube-face-link:nth-child(4) { transform: rotateY(90deg) translateZ(15px); }
+.navbar.scrolled .cube-face-link:nth-child(5) { transform: rotateX(90deg) translateZ(15px); }
+.navbar.scrolled .cube-face-link:nth-child(6) { transform: rotateX(-90deg) translateZ(15px); }
+
+.navbar.scrolled .cube-face {
+    width: 30px;
+    height: 30px;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-menu a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.1);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+    background: #e37a1e;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* 移动菜单按钮 */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    transform: scale(1.1);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+
+/* 页面标题 */
+
+.page-header {
+    margin-top: 70px;
+    padding: 60px 0;
+    background: linear-gradient(135deg, #e37a1e, #d66a0f);
+    color: white;
+    text-align: center;
+}
+
+.page-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
+
+.page-header p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+
+/* 主要内容 */
+
+.content {
+    padding: 60px 0;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-radius: 10px;
+    margin: 20px;
+    box-shadow: 0 8px 32px rgba(227, 122, 30, 0.2);
+}
+
+
+/* 美食介绍 */
+
+.food-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+    align-items: center;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(227, 122, 30, 0.15);
+}
+
+.intro-text h3 {
+    font-size: 2rem;
+    color: #e37a1e;
+    margin-bottom: 20px;
+}
+
+.intro-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+.intro-image img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+
+/* 美食分类 */
+
+.food-categories {
+    margin-bottom: 60px;
+}
+
+.food-categories h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #e37a1e;
+}
+
+.food-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.food-card {
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(227, 122, 30, 0.2);
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.food-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(227, 122, 30, 0.3);
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.food-image {
+    position: relative;
+    overflow: hidden;
+}
+
+.food-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.food-card:hover .food-image img {
+    transform: scale(1.05);
+}
+
+
+
+.food-info {
+    padding: 20px;
+}
+
+.food-info h4 {
+    color: #d66a0f;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.food-info p {
+    margin-bottom: 15px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.food-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    color: #e37a1e;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.origin {
+    background: #f1c40f;
+    color: #2c1608;
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9rem;
+}
+
+
+/* 特色店铺 */
+
+.featured-shops {
+    margin-bottom: 60px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(227, 122, 30, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.featured-shops h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #e37a1e;
+}
+
+.shop-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.shop-item:last-child {
+    border-bottom: none;
+}
+
+.shop-info h4 {
+    color: #d66a0f;
+    font-size: 1.3rem;
+    margin-bottom: 8px;
+}
+
+.shop-info .address {
+    color: #666;
+    margin-bottom: 5px;
+}
+
+.shop-info .desc {
+    color: #888;
+    font-size: 0.95rem;
+    margin-bottom: 5px;
+}
+
+.shop-info .hours {
+    color: #e37a1e;
+    font-size: 0.9rem;
+}
+
+.btn-phone {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #e37a1e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-phone:hover {
+    background: #d66a0f;
+    transform: translateY(-2px);
+}
+
+
+/* 视频区域 */
+
+.video-section {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 50px 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(227, 122, 30, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.video-section h3 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 40px;
+    color: #e37a1e;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 30px;
+}
+
+.video-item video {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.video-item h4 {
+    margin-top: 15px;
+    color: #d66a0f;
+    font-size: 1.2rem;
+}
+
+.video-item p {
+    color: #666;
+}
+
+
+/* 页脚 */
+
+.footer {
+    background: rgba(44, 22, 8, 0.95);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer-links {
+    margin-top: 15px;
+}
+
+.footer-links a {
+    color: #e37a1e;
+    text-decoration: none;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #d66a0f;
+}
+
+
+/* 返回顶部按钮 */
+
+.back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    background: rgba(227, 122, 30, 0.6);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background: rgba(214, 106, 15, 0.8);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.back-to-top svg {
+    width: 24px;
+    height: 24px;
+}
+
+
+/* 响应式设计 */
+
+@media (max-width: 768px) {
+    .food-intro {
+        grid-template-columns: 1fr;
+    }
+    .shop-item {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    .navbar .container {
+        flex-direction: row;
+        gap: 0;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(44, 22, 8, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+        transform: translateY(-100%);
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        z-index: 999;
+        opacity: 0;
+        visibility: hidden;
+    }
+    .nav-menu.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    .nav-menu a {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+        text-align: center;
+        width: 100%;
+    }
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 安阳非遗守艺人</title>
+    <link rel="stylesheet" href="css/contact.css">
+</head>
+
+<body>
+    <!-- 导航栏 -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="cube-container">
+                    <div class="cube">
+                        <a href="index.html" class="cube-face-link"><div class="cube-face front"><img src="images/走进博物馆.png" alt="走进博物馆"></div></a>
+                        <a href="oracle.html" class="cube-face-link"><div class="cube-face back"><img src="images/中国文字博物馆.jpg" alt="中国文字博物馆"></div></a>
+                        <a href="oracle.html" class="cube-face-link"><div class="cube-face left"><img src="images/甲骨文实物.jpg" alt="甲骨文实物"></div></a>
+                        <a href="bronze.html" class="cube-face-link"><div class="cube-face right"><img src="images/司母戊鼎.jpg" alt="司母戊鼎"></div></a>
+                        <a href="food.html" class="cube-face-link"><div class="cube-face top"><img src="images/扁粉菜.jpg" alt="扁粉菜"></div></a>
+                        <a href="contact.html" class="cube-face-link"><div class="cube-face bottom"><img src="images/联系我们.jpg" alt="联系我们"></div></a>
+                    </div>
+                </div>
+                <h1>安阳非遗守艺人</h1>
+            </div>
+            <button class="mobile-menu-btn" aria-label="菜单">
+                ☰
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html">首页</a></li>
+                    <li><a href="history.html">历史底蕴</a></li>
+                    <li><a href="oracle.html">甲骨文</a></li>
+                    <li><a href="bronze.html">青铜器</a></li>
+                    <li><a href="food.html">安阳美食</a></li>
+                    <li><a href="contact.html" class="active">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h2>联系我们</h2>
+            <p>欢迎您与我们交流，共同守护安阳非遗文化</p>
+        </div>
+    </section>
+
+    <!-- 主要内容 -->
+    <main class="content">
+        <div class="container">
+            <div class="contact-wrapper">
+                <!-- 联系表单 -->
+                <div class="contact-form">
+                    <h3>在线留言</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">姓名 *</label>
+                            <input type="text" id="name" name="name" required placeholder="请输入您的姓名">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">邮箱 *</label>
+                            <input type="email" id="email" name="email" required placeholder="请输入您的邮箱">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">电话</label>
+                            <input type="tel" id="phone" name="phone" placeholder="请输入您的电话（可选）">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">主题 *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">请选择咨询主题</option>
+                                <option value="heritage">非遗项目咨询</option>
+                                <option value="cooperation">商务合作</option>
+                                <option value="volunteer">志愿者报名</option>
+                                <option value="feedback">意见反馈</option>
+                                <option value="other">其他</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">留言内容 *</label>
+                            <textarea id="message" name="message" rows="5" required placeholder="请输入您的留言内容（至少10个字）"></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="agree" name="agree" required>
+                                <span>我已阅读并同意《隐私政策》</span>
+                            </label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">发送留言</button>
+                    </form>
+                </div>
+
+                <!-- 联系信息 -->
+                <div class="contact-info">
+                    <h3>联系信息</h3>
+
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-text">
+                            <h4>办公地址</h4>
+                            <p>郑州工商学院 4号楼223史莱克学院 </p>
+                            <p>安阳非遗文化传承中心</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-text">
+                            <h4>联系电话</h4>
+                            <p>18337266075</p>
+                            <p>工作时间：周一至周五 9:00-17:00</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-text">
+                            <h4>电子邮箱</h4>
+                            <p>2582974886@qq.com</p>
+                            <p>商务合作：2582974886@qq.com</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">🌐</div>
+                        <div class="info-text">
+                            <h4>关注我们</h4>
+                            <div class="social-links">
+                                <a href="#" class="social-btn wechat">微信</a>
+                                <a href="#" class="social-btn qq">QQ</a>
+                                <a href="#" class="social-btn douyin">抖音</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 交通指南 -->
+    <section class="map-section">
+        <div class="container">
+            <h3>交通指南</h3>
+            <div class="map-info">
+                <ul>
+                    <li>🚌 公交：乘坐1路、11路、19路至"文明大道中华路口"站下车</li>
+                    <li>🚗 自驾：导航搜索"安阳非遗文化传承中心"</li>
+                    <li>🚄 高铁：安阳东站下车，乘坐出租车约15分钟</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="back-to-top" aria-label="返回顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 15l-6-6-6 6"/>
+    </svg>
+</button>
+
+    <script>
+        // 返回顶部功能
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 导航栏滚动效果
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // 移动菜单切换
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+
+        if (mobileMenuBtn && navMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // 点击菜单外部关闭菜单
+            document.addEventListener('click', (e) => {
+                if (!mobileMenuBtn.contains(e.target) && !navMenu.contains(e.target)) {
+                    navMenu.classList.remove('active');
+                }
+            });
+        }
+    </script>
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 安阳非遗守艺人 | 守护文化根脉，传承千年技艺</p>
+            <div class="footer-links">
+                <a href="index.html">返回首页</a>
+                <a href="#">隐私政策</a>
+                <a href="#">使用条款</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 表单验证与提交
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // 获取表单数据
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+
+            // 简单验证
+            if (data.message.length < 10) {
+                alert('留言内容至少需要10个字！');
+                return;
+            }
+
+            // 模拟提交
+            const submitBtn = this.querySelector('.submit-btn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '发送中...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                alert('感谢您的留言！我们会尽快回复您。');
+                this.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // 二维码模态框逻辑
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('qrModal');
+            const qrImage = document.getElementById('qrImage');
+            const closeBtn = document.querySelector('.qr-modal-close');
+            
+            // 打开模态框函数
+            function openModal(imagePath) {
+                qrImage.src = imagePath;
+                modal.style.display = 'block';
+            }
+            
+            // 关闭模态框函数
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+            
+            // 微信按钮点击事件
+            document.querySelector('.social-btn.wechat').addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal('images/微信.png');
+            });
+            
+            // QQ按钮点击事件
+            document.querySelector('.social-btn.qq').addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal('images/QQ.png');
+            });
+            
+            // 抖音按钮点击事件
+            document.querySelector('.social-btn.douyin').addEventListener('click', (e) => {
+                e.preventDefault();
+                openModal('images/抖音.png');
+            });
+            
+            // 关闭按钮点击事件
+            if (closeBtn) {
+                closeBtn.addEventListener('click', closeModal);
+            }
+            
+            // 点击模态框外部关闭
+            window.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // 按ESC键关闭模态框
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && modal.style.display === 'block') {
+                    closeModal();
+                }
+            });
+        });
+    </script>
+
+    <!-- 二维码模态框 -->
+    <div id="qrModal" class="qr-modal">
+        <div class="qr-modal-content">
+            <span class="qr-modal-close">&times;</span>
+            <div class="qr-modal-image">
+                <img id="qrImage" src="" alt="二维码">
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

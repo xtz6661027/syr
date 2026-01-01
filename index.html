@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>安阳非遗守艺人 - 首页</title>
+    <style>
+        /* 移动导航菜单按钮 */
+        
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 5px;
+            z-index: 1001;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 80%;
+                height: 100vh;
+                background: rgba(46, 109, 102, 0.5);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+            }
+            .nav-menu.active {
+                right: 0;
+            }
+            .nav-menu a {
+                font-size: 1.2rem;
+                padding: 15px 30px;
+            }
+            .navbar .container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="css/index.css" media="all">
+</head>
+
+<body>
+    <!-- 头部导航 -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">
+                <div class="cube-container">
+                    <div class="cube">
+                        <a href="index.html" class="cube-face-link"><div class="cube-face front"><img src="images/走进博物馆.png" alt="走进博物馆"></div></a>
+                        <a href="oracle.html" class="cube-face-link"><div class="cube-face back"><img src="images/中国文字博物馆.jpg" alt="中国文字博物馆"></div></a>
+                        <a href="oracle.html" class="cube-face-link"><div class="cube-face left"><img src="images/甲骨文实物.jpg" alt="甲骨文实物"></div></a>
+                        <a href="bronze.html" class="cube-face-link"><div class="cube-face right"><img src="images/司母戊鼎.jpg" alt="司母戊鼎"></div></a>
+                        <a href="food.html" class="cube-face-link"><div class="cube-face top"><img src="images/扁粉菜.jpg" alt="扁粉菜"></div></a>
+                        <a href="contact.html" class="cube-face-link"><div class="cube-face bottom"><img src="images/联系我们.jpg" alt="联系我们"></div></a>
+                    </div>
+                </div>
+                <h1>安阳非遗守艺人</h1>
+            </div>
+            <nav>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="打开菜单">
+                    ☰
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="active">首页</a></li>
+                    <li><a href="history.html">历史底蕴</a></li>
+                    <li><a href="oracle.html">甲骨文</a></li>
+                    <li><a href="bronze.html">青铜器</a></li>
+                    <li><a href="food.html">安阳美食</a></li>
+                    <li><a href="contact.html">联系我们</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 主要内容区 -->
+    <main class="hero-section">
+        <div class="hero-overlay">
+            <div class="hero-content">
+                <h2>千年古都 · 文化传承</h2>
+                <p>探寻殷商文明，守护非遗瑰宝</p>
+                <div class="cta-buttons">
+                    <a href="history.html" class="btn-primary"><span>开始探索</span></a>
+                    <a href="contact.html" class="btn-secondary"><span>加入我们</span></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- 特色展示 -->
+    <section class="features">
+        <div class="container">
+            <h3>安阳非遗精华</h3>
+            <div class="feature-grid">
+                <a href="history.html" class="feature-card">
+                    <div class="card-icon">🏺</div>
+                    <h4>殷墟文化</h4>
+                    <p>世界文化遗产，华夏文明之源</p>
+                    <span>了解更多 →</span>
+                </a>
+                <a href="oracle.html" class="feature-card">
+                    <div class="card-icon">📜</div>
+                    <h4>甲骨文</h4>
+                    <p>中国最早的成熟文字系统</p>
+                    <span>了解更多 →</span>
+                </a>
+                <a href="bronze.html" class="feature-card">
+                    <div class="card-icon">⚱️</div>
+                    <h4>青铜器</h4>
+                    <p>青铜时代的巅峰技艺</p>
+                    <span>了解更多 →</span>
+                </a>
+                <a href="food.html" class="feature-card">
+                    <div class="card-icon">🥟</div>
+                    <h4>传统美食</h4>
+                    <p>道口烧鸡、扁粉菜等地道风味</p>
+                    <span>了解更多 →</span>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 视频介绍 -->
+    <section class="video-section">
+        <div class="container">
+            <h3>安阳非遗纪录片</h3>
+            <div class="video-container">
+                <video controls poster="images/yinxu.jpg" loading="lazy" autoplay muted playsinline loop>
+                    <source src="video/博物馆文物.mp4" type="video/mp4">
+                    您的浏览器不支持视频播放
+                </video>
+                <p>走进安阳，感受千年文化的魅力</p>
+            </div>
+        </div>
+    </section>
+    <!-- 返回顶部按钮 -->
+    <button id="backToTop" class="back-to-top" aria-label="返回顶部">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M18 15l-6-6-6 6"/>
+    </svg>
+</button>
+
+    <script>
+        // 返回顶部功能
+        const backToTopBtn = document.getElementById('backToTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.add('visible');
+            } else {
+                backToTopBtn.classList.remove('visible');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // 导航栏滚动效果
+        const navbar = document.querySelector('.navbar');
+
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // 移动菜单功能
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMenu = document.getElementById('navMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            mobileMenuBtn.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // 点击导航链接后关闭菜单
+        const navLinks = document.querySelectorAll('.nav-menu a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            });
+        });
+
+        // 点击外部关闭菜单
+        document.addEventListener('click', (e) => {
+            if (!e.target.closest('.navbar')) {
+                navMenu.classList.remove('active');
+                mobileMenuBtn.textContent = '☰';
+            }
+        });
+
+        // 滚动触发动画
+        const observerOptions = {
+            threshold: 0.2,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // 观察需要动画的元素
+        const animatedElements = document.querySelectorAll('.video-section, .features');
+        animatedElements.forEach(el => observer.observe(el));
+
+        // 特色卡片滚动动画
+        const featureCards = document.querySelectorAll('.feature-card');
+        const cardObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0) scale(1)';
+                    }, index * 100);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        });
+
+        featureCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(50px) scale(0.9)';
+            cardObserver.observe(card);
+        });
+
+        // 视频加载优化
+        const video = document.querySelector('video');
+        if (video) {
+            video.setAttribute('preload', 'metadata');
+        }
+    </script>
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 安阳非遗守艺人 | 守护文化根脉，传承千年技艺</p>
+            <div class="footer-links">
+                <a href="index.html">首页</a>
+                <a href="contact.html">联系我们</a>
+                <a href="#">隐私政策</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
